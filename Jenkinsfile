@@ -63,7 +63,7 @@ pipeline {
       }
     }
 
-    stage('deploy') {
+    stage('Deploy app on OpenShift') {
       when {
         expression {
           return env.GIT_BRANCH == "${deploy_branch}" || params.FORCE_FULL_BUILD
@@ -94,7 +94,7 @@ pipeline {
       }
     }
 
-    stage('integration-test') {
+    stage('Integration test') {
       when {
         expression {
           return env.GIT_BRANCH == "${deploy_branch}" || params.FORCE_FULL_BUILD
@@ -110,14 +110,14 @@ pipeline {
               def url = dc.spec.host
               echo "${url}"
               while (true) {
-                def app_status = sh(returnStdout: true, script: "curl ${url}/hello -o /dev/null -w '%{http_code}' -s").trim()
+                def app_status = sh(returnStdout: true, script: "curl ${url} -o /dev/null -w '%{http_code}' -s").trim()
                 if(app_status == "200") {
                   break;
                 }
                 sleep 5
               }
               // selenium test
-              sh "python src/test/selenium/sample.py http://${url}/health"
+              //sh "python src/test/selenium/sample.py http://${url}/health"
             }
           }
         }

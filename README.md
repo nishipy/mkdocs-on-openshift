@@ -1,4 +1,5 @@
 # Sample MkDocs on OpenShift
+Enjoy!
 ![](images/sampledoc.jpg)
 
 ## Versions
@@ -68,8 +69,9 @@ cache-control: private
 ## Jenkins Pipeline
 ### 
 ```
-$ oc new-project mkdocs-dev
-$ oc new-project app-devops
+$ oc new-project mkdocs-dev 
+$ oc new-project app-devops #For jenkins
+$ oc policy add-role-to-user edit system:serviceaccount:app-devops:jenkins -n mkdocs-dev
 ```
 
 ## Test
