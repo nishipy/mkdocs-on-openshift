@@ -21,6 +21,7 @@ $ oc get route mkdocs
 
 ### Apply manifests
 ```
+$ oc new-project mkdocs-dev
 $ oc apply -f openshift/mkdocs-build.yaml
 $ oc start-build mkdocs-buildconfig
 $ oc apply -f mkdocs-deploy.yaml 
@@ -62,6 +63,13 @@ last-modified: Wed, 21 Oct 2020 09:24:10 GMT
 content-length: 11794
 set-cookie: 1c202a3703d77115fc42db5d007cf155=c3178c8c7936f51f22b27eda0404af07; path=/; HttpOnly
 cache-control: private
+```
+
+## Jenkins Pipeline
+### 
+```
+$ oc new-project mkdocs-dev
+$ oc new-project app-devops
 ```
 
 ## Test
