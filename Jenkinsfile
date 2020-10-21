@@ -73,7 +73,7 @@ pipeline {
           openshift.withCluster() {
             openshift.withProject("${deploy_project}") {
               // oc apply -f mkdocs-deploy.yaml
-              openshift.apply('-f', manifests/mkdocs-deploy.yaml')
+              openshift.apply('-f', 'manifests/mkdocs-deploy.yaml')
 
               // Wait for application to be deployed
               def dc = openshift.selector("dc", "${app_name}").object()
