@@ -1,0 +1,25 @@
+---
+apiVersion: v1
+kind: ImageStream
+metadata:
+  name: custom-jenkins-agent-maven
+spec: {}
+---
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: custom-jenkins-agent-maven
+spec:
+  source: 
+    git:
+      uri: https://github.com/mosuke5/openshift-pipeline-practice-java
+      ref: master
+    type: Git
+  strategy: 
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: etc/Dockerfile_jenkins_agent
+  output:
+    to:
+      kind: ImageStreamTag
+      name: custom-jenkins-agent-maven:latest
