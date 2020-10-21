@@ -76,6 +76,7 @@ $ oc policy add-role-to-user edit system:serviceaccount:app-devops:jenkins -n mk
 #### Run Jenkins Pipeline
 ```
 ```
+![](images/jenkins-integration-test.png)
 
 ## Test
 - Test by using Selenium
