@@ -3,7 +3,7 @@ kind: Pod
 spec:
   serviceAccountName: jenkins
   containers:
-    - name: jenkins-agent
+    - name: jnlp
       image: image-registry.openshift-image-registry.svc:5000/openshift/jenkins-agent-maven
       args: ['$(JENKINS_SECRET)', '$(JENKINS_NAME)']
       tty: false
