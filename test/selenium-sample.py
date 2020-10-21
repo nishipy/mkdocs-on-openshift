@@ -13,6 +13,7 @@ chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
 
 driver = webdriver.Chrome(options=chrome_options)
+driver.set_window_size('1200', '1000')
 driver.get(args[1])
 
 search = driver.find_element_by_name('query')
