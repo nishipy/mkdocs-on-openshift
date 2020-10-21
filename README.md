@@ -27,7 +27,6 @@ $ oc apply -f openshift/mkdocs-build.yaml
 $ oc start-build mkdocs
 $ oc apply -f mkdocs-deploy.yaml 
 $ oc get all
-$ oc get all
 NAME                             READY   STATUS      RESTARTS   AGE
 pod/mkdocs-1-deploy              0/1     Completed   0          13s
 pod/mkdocs-1-nvgkh               1/1     Running     0          10s
@@ -66,17 +65,26 @@ set-cookie: 1c202a3703d77115fc42db5d007cf155=c3178c8c7936f51f22b27eda0404af07; p
 cache-control: private
 ```
 
-## Jenkins Pipeline
-### 
+### [WIP]Jenkins Pipeline
+#### Deploy Jenkins
 ```
 $ oc new-project mkdocs-dev 
-$ oc new-project app-devops #For jenkins
+$ oc new-project app-devops
 $ oc policy add-role-to-user edit system:serviceaccount:app-devops:jenkins -n mkdocs-dev
+```
+
+#### Run Jenkins Pipeline
+```
 ```
 
 ## Test
 - Test by using Selenium
+  ```
+  (Headless)
+  $ python test/selenium-sample.py http://<sample-mkdocs-url>
+  ```
   ![](images/selenuim_test.gif)
+
 
 ## References
 - https://github.com/mosuke5/openshift-pipeline-practice-java
