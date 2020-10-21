@@ -83,6 +83,8 @@ $ oc policy add-role-to-user edit system:serviceaccount:app-devops:jenkins -n mk
   ```
   (Headless)
   $ python test/selenium-sample.py http://<sample-mkdocs-url>
+  (Browser)
+  $ python test/test.py
   ```
   ![](images/selenuim_test.gif)
 
