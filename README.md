@@ -77,3 +77,6 @@ $ oc policy add-role-to-user edit system:serviceaccount:app-devops:jenkins -n mk
 ## Test
 - Test by using Selenium
   ![](images/selenuim_test.gif)
+
+## References
+- https://github.com/mosuke5/openshift-pipeline-practice-java
