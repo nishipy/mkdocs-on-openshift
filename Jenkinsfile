@@ -5,7 +5,7 @@ pipeline {
   agent {
     kubernetes {
       cloud 'openshift'
-      yamlFile 'manifests/jenkins-agent.yaml'
+      yamlFile 'manifests/jenkins-agent-deploy.yaml'
     }
   }
 
@@ -71,7 +71,7 @@ pipeline {
       }
 
       steps {
-        echo "deploy"
+        echo "Deploying app on OpenShift"
         script {
           openshift.withCluster() {
             openshift.withProject("${deploy_project}") {
@@ -102,7 +102,7 @@ pipeline {
       }
 
       steps {
-        echo "integration-test, e2e-test"
+        echo "Test by curl and selenium"
         script {
           openshift.withCluster() {
             openshift.withProject("${deploy_project}") {
@@ -117,7 +117,7 @@ pipeline {
                 sleep 5
               }
               // selenium test
-              //sh "python src/test/selenium/sample.py http://${url}/health"
+              sh "python test/selenium-sample.py http://${url}"
             }
           }
         }
