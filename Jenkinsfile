@@ -54,14 +54,10 @@ pipeline {
               //oc apply -f manifests/mkdocs-build.yaml
               openshift.apply('-f', 'manifests/mkdocs-build.yaml')
 
-              //openshift.selector("bc", "${app_name}").startBuild("--from-file=./target/freelancer-service.jar", "--wait=true")
-              //openshift.selector("bc", "${app_name}").startBuild("--wait=true")
-              //openshift.tag("${app_name}:latest", "${app_name}:${env.GIT_COMMIT}")
             }
           }
         }
       }
-
     }
 
     stage('deploy') {
@@ -77,7 +73,7 @@ pipeline {
           openshift.withCluster() {
             openshift.withProject("${deploy_project}") {
               // oc apply -f mkdocs-deploy.yaml
-              openshift.apply('manifests/mkdocs-deploy.yaml')
+              openshift.apply('-f', manifests/mkdocs-deploy.yaml')
 
               // Wait for application to be deployed
               def dc = openshift.selector("dc", "${app_name}").object()
