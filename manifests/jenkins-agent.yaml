@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+spec:
+  serviceAccountName: jenkins
+  containers:
+    - name: jenkins-agent
+      image: image-registry.openshift-image-registry.svc:5000/openshift/jenkins-agent-maven
+      args: ['$(JENKINS_SECRET)', '$(JENKINS_NAME)']
+      tty: false
+      resources:
+        requests:
+          cpu: 500m
+          memory: 1024Mi
+        limits:
+          cpu: 500m
+          memory: 1024Mi
