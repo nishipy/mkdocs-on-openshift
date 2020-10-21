@@ -8,7 +8,7 @@ spec: {}
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
-  name: mkdocs-buildconfig
+  name: mkdocs
 spec:
   source: 
     git:
