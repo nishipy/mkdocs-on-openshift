@@ -54,6 +54,9 @@ pipeline {
               //oc apply -f manifests/mkdocs-build.yaml
               openshift.apply('-f', 'manifests/mkdocs-build.yaml')
 
+              //oc start-build mkdocs
+              openshift.selector("bc", "${app_name}").startBuild("--wait=true")
+              //openshift.tag("${app_name}:latest", "${app_name}:${env.GIT_COMMIT}")
             }
           }
         }
