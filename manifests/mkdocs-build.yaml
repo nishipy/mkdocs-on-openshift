@@ -1,0 +1,29 @@
+---
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  name: mkdocs-dev
+---
+apiVersion: v1
+kind: ImageStream
+metadata:
+  name: mkdocs
+spec: {}
+---
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: mkdocs-buildconfig
+spec:
+  source: 
+    git:
+      uri: https://github.com/nishipy/mkdocs-on-container
+      ref: main
+    #contextDir: 
+    type: Git
+  strategy: 
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: mkdocs:latest

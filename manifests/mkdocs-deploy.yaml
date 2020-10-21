@@ -1,0 +1,57 @@
+---
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    run: mkdocs
+  name: mkdocs
+spec:
+  replicas: 1
+  selector:
+    run: mkdocs
+  template:
+    metadata:
+      labels:
+        run: mkdocs
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/mkdocs-dev/mkdocs:latest
+        name: mkdocs
+        resources:
+          requests:
+            cpu: 100m
+            memory: 500Mi
+          limits:
+            cpu: 100m
+            memory: 500Mi
+  test: false
+  triggers: null
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: mkdocs
+  name: mkdocs
+spec:
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    run: mkdocs
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    run: mkdocs
+  name: mkdocs
+spec:
+  host: ""
+  port:
+    targetPort: 8000
+  to:
+    kind: ""
+    name: mkdocs
+    weight: null
