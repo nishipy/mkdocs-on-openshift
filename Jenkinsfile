@@ -117,7 +117,11 @@ pipeline {
                 sleep 5
               }
               // selenium test
-              sh "python test/selenium-sample.py http://${url}"
+              //Python
+              sh "python test/python-selenium/selenium-sample.py http://${url}"
+
+              //Java
+              sh "mvn compile assembly:single -f test/java-selenium/pom.xml http://${url}"
             }
           }
         }
