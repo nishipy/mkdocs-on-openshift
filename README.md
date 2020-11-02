@@ -65,20 +65,52 @@ set-cookie: 1c202a3703d77115fc42db5d007cf155=c3178c8c7936f51f22b27eda0404af07; p
 cache-control: private
 ```
 
-### [WIP]Jenkins Pipeline
+### Jenkins Pipeline
 #### Deploy Jenkins
 ```
 $ oc new-project mkdocs-dev 
 $ oc new-project app-devops
+$ oc new-app jenkins-persistent --param ENABLE_OAUTH=true --param MEMORY_LIMIT=2Gi --param VOLUME_CAPACITY=10Gi --param DISABLE_ADMINISTRATIVE_MONITORS=true
 $ oc policy add-role-to-user edit system:serviceaccount:app-devops:jenkins -n mkdocs-dev
 ```
 
+#### Edit Jenkins
+```
+$ oc edit deploymentconfigs.apps.openshift.io jenkins
+```
+```
+...
+        resources:
+          limits:
+            cpu: "2"
+            memory: 4Gi
+          requests:
+            cpu: "2"
+            memory: 4Gi
+...
+```
+
+#### Build your jenkins agent image
+See [here](https://github.com/nishipy/customize-jenkins-agent-ocp4#on-openshift-4).
+
+Or apply manifest files.
+```
+$ oc apply -f manifests/jenkins-agent-build.yaml
+$ oc start-build custom-jenkins-agent-maven -n app-devops
+```
+
+#### Create Jenkins Job
+See [here](https://github.com/mosuke5/openshift-pipeline-practice-java/blob/master/how-to-use.md#jenkins%E3%81%AE%E8%A8%AD%E5%AE%9A).
+
 #### Run Jenkins Pipeline
+For example:
 ```
+$ curl https://jenkins-app-devops.xxxxx.com/generic-webhook-trigger/invoke?token=<your-token> --insecure
 ```
+
 ![](images/jenkins-integration-test.png)
 
-## Test
+## Test Codes
 - Test by using Selenium
   ```
   (Headless)
