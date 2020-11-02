@@ -121,7 +121,8 @@ pipeline {
               sh "python test/python-selenium/selenium-sample.py http://${url}"
 
               //Java
-              sh "mvn compile assembly:single -f test/java-selenium/pom.xml http://${url}"
+              sh "mvn compile assembly:single -f test/java-selenium/pom.xml"
+              sh "java -jar test/java-selenium/target/java-selenium-1.0-SNAPSHOT-jar-with-dependencies.jar http://${url}"
             }
           }
         }
