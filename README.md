@@ -108,17 +108,14 @@ For example:
 $ curl https://jenkins-app-devops.xxxxx.com/generic-webhook-trigger/invoke?token=<your-token> --insecure
 ```
 
+![](images/stage_view.png)
+
 ![](images/jenkins-integration-test.png)
 
 ## Test Codes
-- Test by using Selenium
-  ```
-  (Headless)
-  $ python test/selenium-sample.py http://<sample-mkdocs-url>
-  (Browser)
-  $ python test/test.py
-  ```
-  ![](images/selenuim_test.gif)
+Testing by using Selenium
+
+![](images/selenuim_test.gif)
 
 
 ## References
