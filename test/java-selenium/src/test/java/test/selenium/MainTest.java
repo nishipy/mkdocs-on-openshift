@@ -10,9 +10,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.*;
 
 public class MainTest {
+
 	@Test
 	public void checkTitle() throws Exception{
 		String url;
+		//url = "http://localhost:8000/";
 		url = "http://localhost:8000/";
 
         ChromeOptions options = new ChromeOptions();

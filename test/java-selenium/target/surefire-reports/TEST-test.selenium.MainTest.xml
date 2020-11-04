@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="test.selenium.MainTest" time="8.087" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="test.selenium.MainTest" time="8.079" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="15"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,8 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="JP"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/15.0.1/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium/target/surefire/surefirebooter10733820403806252470.jar /Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium/target/surefire 2020-11-04T17-00-35_648-jvmRun1 surefire2379934702114477146tmp surefire_02024423454834950177tmp"/>
+    <property name="sun.java.command" value="/Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium/target/surefire/surefirebooter8105859036651273468.jar /Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium/target/surefire 2020-11-04T18-20-19_510-jvmRun1 surefire14378731362546110789tmp surefire_05918103854978117973tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium/target/test-classes:/Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium/target/classes:/Users/nishimuratakuya/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/nishimuratakuya/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-java/3.141.59/selenium-java-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-api/3.141.59/selenium-api-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.141.59/selenium-chrome-driver-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.141.59/selenium-edge-driver-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.141.59/selenium-firefox-driver-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.141.59/selenium-ie-driver-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.141.59/selenium-opera-driver-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.141.59/selenium-safari-driver-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59.jar:/Users/nishimuratakuya/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/Users/nishimuratakuya/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/Users/nishimuratakuya/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/Users/nishimuratakuya/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/nishimuratakuya/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/Users/nishimuratakuya/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/Users/nishimuratakuya/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/Users/nishimuratakuya/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/Users/nishimuratakuya/.m2/repository/com/squareup/okhttp3/okhttp/3.11.0/okhttp-3.11.0.jar:/Users/nishimuratakuya/.m2/repository/com/squareup/okio/okio/1.14.0/okio-1.14.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -25,10 +26,11 @@
     <property name="basedir" value="/Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
-    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium/target/surefire/surefirebooter10733820403806252470.jar"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/Users/nishimuratakuya/Projects/mkdocs-on-openshift/test/java-selenium/target/surefire/surefirebooter8105859036651273468.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="15.0.1+9"/>
     <property name="user.name" value="nishimuratakuya"/>
     <property name="path.separator" value=":"/>
@@ -48,7 +50,8 @@
     <property name="java.vendor" value="N/A"/>
     <property name="java.vm.version" value="15.0.1+9"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="59.0"/>
   </properties>
-  <testcase name="checkTitle" classname="test.selenium.MainTest" time="8.052"/>
+  <testcase name="checkTitle" classname="test.selenium.MainTest" time="8.042"/>
 </testsuite>
