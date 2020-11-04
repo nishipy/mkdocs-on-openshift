@@ -80,12 +80,19 @@
           <configuration>
             <archive>
               <manifest>
-                <mainClass>test.selenium.Main</mainClass>
+                <mainClass>test.selenium.MainTest</mainClass>
               </manifest>
             </archive>
             <descriptorRefs>
               <descriptorRef>jar-with-dependencies</descriptorRef>
             </descriptorRefs>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <configuration>
+            <mainClass>test.selenium.MainTest</mainClass>
           </configuration>
         </plugin>
       </plugins>
