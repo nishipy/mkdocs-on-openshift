@@ -123,8 +123,13 @@ pipeline {
               //Java
               //sh "mvn compile assembly:single -f test/java-selenium/pom.xml"
               //sh "java -jar test/java-selenium/target/java-selenium-1.0-SNAPSHOT-jar-with-dependencies.jar http://${url}"
-              sh "mvn test -f test/java-selenium/pom.xml"
+              sh "mvn test -Dmaven.test.failure.ignore=true -f test/java-selenium/pom.xml"
               //sh "cat test/java-selenium/target/surefire-reports/*"
+
+              junit allowEmptyResults: true,
+                  keepLongStdio: true,
+                  healthScaleFactor: 2.0,
+                  testResults: '**/target/surefire-reports/TEST-*.xml'
             }
           }
         }
