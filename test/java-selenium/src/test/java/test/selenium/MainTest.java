@@ -15,7 +15,7 @@ public class MainTest {
 	public void checkTitle() throws Exception{
 		String url;
 		//url = "http://localhost:8000/";
-		url = "http://mkdocs-mkdocs-dev.apps.cluster-c7ee.c7ee.sandbox1840.opentlc.com";
+		url = "http://mkdocs-mkdocs-dev.apps.cluster-12f4.12f4.sandbox1401.opentlc.com";
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
