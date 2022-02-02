@@ -23,7 +23,7 @@ $ oc get route mkdocs
 ### Apply manifests
 ```
 $ oc new-project mkdocs-dev
-$ oc apply -f openshift/mkdocs-build.yaml
+$ oc apply -f manifests/mkdocs-build.yaml
 $ oc start-build mkdocs
 $ oc apply -f mkdocs-deploy.yaml 
 $ oc get all
