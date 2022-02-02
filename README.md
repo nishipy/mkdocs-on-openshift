@@ -25,7 +25,7 @@ $ oc get route mkdocs
 $ oc new-project mkdocs-dev
 $ oc apply -f manifests/mkdocs-build.yaml
 $ oc start-build mkdocs
-$ oc apply -f mkdocs-deploy.yaml 
+$ oc apply -f manifests/mkdocs-deploy.yaml 
 $ oc get all
 NAME                             READY   STATUS      RESTARTS   AGE
 pod/mkdocs-1-deploy              0/1     Completed   0          13s
